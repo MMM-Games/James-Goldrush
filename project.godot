@@ -16,7 +16,13 @@ _global_script_class_icons={
 [application]
 
 config/name="James-Goldrush"
+run/main_scene="res://Szenen/Hauptmenü/Hauptmenü.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1600
+window/size/height=1024
 
 [rendering]
 

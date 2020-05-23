@@ -1,3 +1,86 @@
-[gd_scene format=2]
+[gd_scene load_steps=10 format=2]
 
-[node name="Node" type="Node"]
+[ext_resource path="res://Szenen/Hauptmenü/Texturen/Hintergrund.png" type="Texture" id=1]
+[ext_resource path="res://Szenen/Hauptmenü/Texturen/Pistole Fertig.png" type="Texture" id=2]
+[ext_resource path="res://Szenen/Hauptmenü/Texturen/sprite_1.png" type="Texture" id=3]
+[ext_resource path="res://Fonts/Fipps-Regular.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://Szenen/Hauptmenü/Soundeffekte/Button.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Szenen/Hauptmenü/Texturen/sprite_0.png" type="Texture" id=6]
+[ext_resource path="res://Szenen/Hauptmenü/Hauptmenü.gd" type="Script" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 4 )
+
+[node name="Hauptmenü" type="Node"]
+script = ExtResource( 7 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -175.5
+margin_top = -292.377
+margin_right = 175.5
+margin_bottom = 285.623
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pistole Fertig" type="Sprite" parent="NinePatchRect"]
+position = Vector2( 175.76, 443.924 )
+scale = Vector2( 0.929658, 1.0124 )
+texture = ExtResource( 2 )
+
+[node name="Spielen" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -109.285
+margin_top = -160.285
+margin_right = 112.715
+margin_bottom = -92.2852
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Spielen"]
+margin_left = 54.2885
+margin_top = 2.71475
+margin_right = 198.289
+margin_bottom = 62.7148
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Spielen"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hauptmenü" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -144.0
+margin_top = 250.0
+margin_right = 144.0
+margin_bottom = 330.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.486275, 0.486275, 0.486275, 1 )
+text = "Hauptmenü"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+[connection signal="pressed" from="Spielen" to="." method="_on_Spielen_pressed"]
