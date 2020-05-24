@@ -11,9 +11,5 @@ dest_files=[ "res://.import/Button.ogg-192c2b9caba044db5201ca11b7f92111.oggstr" 
 
 [params]
 
-<<<<<<< HEAD
-loop=true
-=======
 loop=false
->>>>>>> 9c8d561c18de4066f48fcec7c6b88dfa4398c939
 loop_offset=0
