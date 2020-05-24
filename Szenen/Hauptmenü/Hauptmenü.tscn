@@ -1,12 +1,14 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Szenen/Hauptmenü/Texturen/Hintergrund.png" type="Texture" id=1]
+[ext_resource path="res://Szenen/Hauptmenü/Texturen/Optionen1.png" type="Texture" id=1]
 [ext_resource path="res://Szenen/Hauptmenü/Texturen/Pistole Fertig.png" type="Texture" id=2]
 [ext_resource path="res://Szenen/Hauptmenü/Texturen/sprite_1.png" type="Texture" id=3]
 [ext_resource path="res://Fonts/Fipps-Regular.otf" type="DynamicFontData" id=4]
 [ext_resource path="res://Szenen/Hauptmenü/Soundeffekte/Button.ogg" type="AudioStream" id=5]
 [ext_resource path="res://Szenen/Hauptmenü/Texturen/sprite_0.png" type="Texture" id=6]
 [ext_resource path="res://Szenen/Hauptmenü/Hauptmenü.gd" type="Script" id=7]
+[ext_resource path="res://Szenen/Hauptmenü/Texturen/Optionen0.png" type="Texture" id=8]
+[ext_resource path="res://Szenen/Hauptmenü/Texturen/Zahnradbild-1.png.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -14,6 +16,13 @@ font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 32
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+extra_spacing_top = -2
+extra_spacing_bottom = -4
+extra_spacing_char = -2
 font_data = ExtResource( 4 )
 
 [node name="Hauptmenü" type="Node"]
@@ -25,17 +34,16 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -202.0
-margin_top = -289.0
+margin_top = -290.404
 margin_right = 202.0
-margin_bottom = 289.0
-texture = ExtResource( 1 )
+margin_bottom = 287.596
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Pistole Fertig" type="Sprite" parent="NinePatchRect"]
-position = Vector2( 202.968, 443.924 )
-scale = Vector2( 0.929658, 1.0124 )
+position = Vector2( 202.968, 466.912 )
+scale = Vector2( 0.929658, 0.997698 )
 texture = ExtResource( 2 )
 
 [node name="Spielen" type="TextureButton" parent="."]
@@ -56,12 +64,13 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="Spielen"]
-margin_left = 54.2885
+margin_left = 46.7254
 margin_top = 2.71475
-margin_right = 198.289
+margin_right = 190.726
 margin_bottom = 62.7148
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Spielen"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -77,7 +86,9 @@ margin_top = -262.0
 margin_right = 144.0
 margin_bottom = -182.0
 custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0.486275, 0.486275, 0.486275, 1 )
+custom_colors/font_color = Color( 0.87451, 0.8, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Hauptmenü"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -92,11 +103,32 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -110.0
-margin_top = -262.0
+margin_top = -72.0
 margin_right = 110.0
-margin_bottom = -194.0
+margin_bottom = -3.99997
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 1 )
+texture_hover = ExtResource( 1 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Label" type="Label" parent="Optionen"]
+margin_left = 54.0
+margin_top = 2.15125
+margin_right = 228.0
+margin_bottom = 62.1512
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Optionen"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Zahnradbild-1png" type="Sprite" parent="Optionen"]
+position = Vector2( 26.0571, 31.1081 )
+scale = Vector2( 0.0786797, 0.0834632 )
+texture = ExtResource( 9 )
 [connection signal="pressed" from="Spielen" to="." method="_on_Spielen_pressed"]
+[connection signal="pressed" from="Optionen" to="." method="_on_Optionen_pressed"]
