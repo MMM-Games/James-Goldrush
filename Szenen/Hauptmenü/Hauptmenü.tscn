@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Szenen/Hauptmenü/Texturen/Optionen1.png" type="Texture" id=1]
 [ext_resource path="res://Szenen/Hauptmenü/Texturen/Pistole Fertig.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Szenen/Hauptmenü/Hauptmenü.gd" type="Script" id=7]
 [ext_resource path="res://Szenen/Hauptmenü/Texturen/Optionen0.png" type="Texture" id=8]
 [ext_resource path="res://Szenen/Hauptmenü/Texturen/Zahnradbild-1.png.png" type="Texture" id=9]
+[ext_resource path="res://Szenen/Hauptmenü/Texturen/Hintergrund der aller echte also wirklich (1).png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -37,6 +38,7 @@ margin_left = -202.0
 margin_top = -290.404
 margin_right = 202.0
 margin_bottom = 287.596
+texture = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -86,7 +88,7 @@ margin_top = -262.0
 margin_right = 144.0
 margin_bottom = -182.0
 custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0.87451, 0.8, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Hauptmenü"
